@@ -1,0 +1,102 @@
+movies,genre,IMDb Rating
+The Shawshank Redemption,Drama,9.3
+The Godfather,Crime,9.2
+The Dark Knight,Action,9
+Pulp Fiction,Crime,8.9
+Forrest Gump,Drama,8.8
+Inception,Sci-Fi,8.8
+Fight Club,Drama,8.8
+The Matrix,Sci-Fi,8.7
+Interstellar,Sci-Fi,8.7
+The Lord of the Rings: The Fellowship of the Ring,Fantasy,8.9
+The Lord of the Rings: The Two Towers,Fantasy,8.8
+The Lord of the Rings: The Return of the King,Fantasy,9
+The Empire Strikes Back,Sci-Fi,8.7
+Star Wars: A New Hope,Sci-Fi,8.6
+Avengers: Endgame,Action,8.4
+Avengers: Infinity War,Action,8.4
+Iron Man,Action,7.9
+Spider-Man: No Way Home,Action,8.2
+Guardians of the Galaxy,Sci-Fi,8
+Black Panther,Action,7.3
+,,
+joker,Drama,8.4
+The Prestige,Mystery,8.5
+The Departed,Crime,8.5
+Se7en,Crime,8.6
+The Silence of the Lambs,Thriller,8.6
+Parasite,Thriller,8.5
+Whiplash,Drama,8.5
+La La Land,Musical,8
+The Social Network,Drama,7.8
+Good Will Hunting,Drama,8.3
+Gladiator,Action,8.5
+Braveheart,History,8.3
+Saving Private Ryan,War,8.6
+1917,War,8.2
+Dunkirk,War,7.8
+The Green Mile,Drama,8.6
+The Lion King,Animation,8.5
+Toy Story,Animation,8.3
+Toy Story 3,Animation,8.3
+Finding Nemo,Animation,8.2
+Up,Animation,8.3
+Inside Out,Animation,8.1
+Coco,Animation,8.4
+Frozen,Animation,7.4
+Shrek,Animation,7.9
+How to Train Your Dragon,Animation,8.1
+Moana,Animation,7.6
+Zootopia,Animation,8
+The Incredibles,Animation,8
+Ratatouille,Animation,8.1
+The Batman,Action,7.8
+Batman Begins,Action,8.2
+The Dark Knight Rises,Action,8.4
+Logan,Action,8.1
+Deadpool,Action,8
+John Wick,Action,7.5
+John Wick: Chapter 4,Action,7.7
+Mission: Impossible – Fallout,Action,7.7
+Top Gun: Maverick,Action,8.2
+Mad Max: Fury Road,Action,8.1
+Jurassic Park,Adventure,8.2
+Jaws,Thriller,8.1
+Titanic,Romance,7.9
+The Notebook,Romance,7.8
+The Greatest Showman,Musical,7.5
+Bohemian Rhapsody,Biography,7.9
+Oppenheimer,Biography,8.3
+Barbie,Comedy,6.9
+The Truman Show,Drama,8.2
+Back to the Future,Sci-Fi,8.5
+Alien,Horror,8.5
+Aliens,Action,8.4
+The Thing,Horror,8.2
+A Quiet Place,Horror,7.5
+Get Out,Horror,7.8
+It,Horror,7.3
+The Conjuring,Horror,7.5
+Hereditary,Horror,7.3
+Scream,Horror,7.4
+The Exorcist,Horror,8.1
+Knives Out,Mystery,7.9
+Glass Onion,Mystery,7.1
+Sherlock Holmes,Mystery,7.6
+The Grand Budapest Hotel,Comedy,8.1
+The Wolf of Wall Street,Comedy,8.2
+Catch Me If You Can,Biography,8.1
+The Imitation Game,Biography,8
+A Beautiful Mind,Biography,8.2
+The Pianist,Biography,8.5
+The Revenant,Adventure,8
+Cast Away,Adventure,7.8
+The Martian,Sci-Fi,8
+Edge of Tomorrow,Sci-Fi,7.9
+Ready Player One,Sci-Fi,7.4
+Dune,Sci-Fi,8
+Dune: Part Two,Sci-Fi,8.5
+Everything Everywhere All at Once,Sci-Fi,7.8
+No Country for Old Men,Crime,8.2
+The Usual Suspects,Crime,8.5
+The Big Lebowski,Comedy,8.1
