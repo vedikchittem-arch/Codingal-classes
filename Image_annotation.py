@@ -27,6 +27,9 @@ center2_y = top_left2[1]+rect2_height // 2
 cv2.circle(image_rgb, (center1_x, center1_y),15,(0,255,0),-1)
 cv2.circle(image_rgb, (center2_x, center2_y),15,(0,255,0),-1)
 
+#draw a line connecting both centers of the circle
+cv2.line(image_rgb, (center1_x, center1_y), (center2_x, center2_y), (0,255,0),3)
+
 
 plt.figure(figsize = (12, 8))
 plt.imshow(image_rgb)
