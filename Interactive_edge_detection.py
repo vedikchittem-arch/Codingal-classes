@@ -17,3 +17,46 @@ def apply_colour_filter(image, filter_type):
     elif filter_type == "decrease_blue":
         filtered_image[:,:,0] = cv2.subtract(filtered_image[:,:,0],50)
     return filtered_image
+
+image_path = "family.jpeg"
+
+image = cv2.imread(image_path)
+if image is None:
+    print("Image is not present")
+else:
+    filter_type = "original"
+    print("Press the following keys to apply filters: ")
+    print("r-red tint")
+    print("b-blue tint")
+    print("g-green tint")
+    print("i-increase red intensity")
+    print("d-decrease blue intensity")
+    print("q-quit")
+
+    while True:
+        filter_image = apply_colour_filter(image,filter_type)
+        display_image = cv2.resize(filter_image, (400, 200))
+        cv2.imshow("filter_image",display_image)
+        key = cv2.waitKey(0) & 0xFF
+
+        if key == ord('r'):
+            filter_type = "red_tint"
+        elif key == ord('b'):
+            filter_type = "blue_tint"
+        elif key == ord('g'):
+            filter_type = "green_tint"
+        elif key == ord('i'):
+            filter_type = "increase_red"
+        elif key == ord('d'):
+            filter_type = "decrease_blue"
+        elif key == ord('q'):
+            print("exiting ...")
+            break
+        else:
+            print("Invalid key! Please use r,b,g,i,d,q")
+    cv2.destroyAllWindows()
+        
+
+
+
+    
