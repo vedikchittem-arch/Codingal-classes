@@ -1,6 +1,7 @@
 import tensorflow as tf
-from tensorflow.keras import layers, models
+import numpy as np
 import matplotlib.pyplot as plt
+
 
 # Load MNIST dataset
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
@@ -9,14 +10,15 @@ import matplotlib.pyplot as plt
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
 # Build the model
-model = models.Sequential([
-    layers.Flatten(input_shape=(28, 28)),
-    layers.Dense(128, activation='relu'),
-    layers.Dense(10, activation='softmax')
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28, 28)),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax'),
+    tf.keras.layers.LeakyReLU(negative_slope = 0.1)
 ])
 
 # Compile the model
-model.compile(optimizer='adam',
+model.compile(optimizer=tf.keras.optimizers.RMSprop(learning_rate = 0.001),
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy'])
 
