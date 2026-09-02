@@ -6,6 +6,8 @@
 
 import cv2
 
+from PIL import Image, ImageDraw, ImageFont
+
 # Open webcam
 cap = cv2.VideoCapture(0)
 
@@ -13,13 +15,17 @@ cap = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
+font_path = "C:/Windows/Fonts/seguiemj.ttf"
+font = ImageFont.truetype(font_path, 32)
 
 while True:
     ret, frame = cap.read()
 
     if not ret:
         break
-
+    pil_image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    draw = ImageDraw.Draw(pil_image)
+    
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
@@ -41,15 +47,8 @@ while True:
         message = f"Wow! {face_count} people here! 🎉"
 
     # Display message
-    cv2.putText(
-        frame,
-        message,
-        (20, 40),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        0.8,
-        (0, 255, 255),
-        2
-    )
+    draw.text((20, 20), message, font= font, fill= (255, 255, 0))
+    frame = cv2.cvtColor(pil_image, cv2.COLOR_RGB2BGR)
 
     
     cv2.imshow("Funny Face Detector", frame)
@@ -62,4 +61,10 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
+# create a python opencv camera program that 
+# R = red mode 🍎
+# G = green alien mode 👽
+# C = canny xray mode 🩻
+# T = Cartoon mode 📺
+# Q = quit 🚪
 
