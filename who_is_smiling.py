@@ -4,36 +4,62 @@
 # two faces say Party has started 🥳🥳🎉
 # 
 
-import cv2 
+import cv2
 
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-
+# Open webcam
 cap = cv2.VideoCapture(0)
 
-if not cap.isOpened():
-    print("Camera is not opened")
+# Load face detector
+face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
 
 while True:
     ret, frame = cap.read()
+
     if not ret:
-        print("Failed to capture image")
         break
+
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
-# draw rectangle around faces
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+
     for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x,y), (x + w, y + h ), (255 ,0, 0), 2)
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(frame, f'People count: {len(faces)}', (10, 30), font, 1, (255,0,0), 2, cv2.LINE_AA)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+    # Number of faces
+    face_count = len(faces)
+
+    # Choose message
+    if face_count == 0:
+        message = "Where is everybody?"
+    elif face_count == 1:
+        message = "Hey boss 😎"
+    elif face_count == 2:
+        message = "Party has started 🥳🥳🎉"
+    else:
+        message = f"Wow! {face_count} people here! 🎉"
+
+    # Display message
+    cv2.putText(
+        frame,
+        message,
+        (20, 40),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.8,
+        (0, 255, 255),
+        2
+    )
+
     
-    cv2.imshow("Face tracking and counting", frame)
+    cv2.imshow("Funny Face Detector", frame)
 
-# Exit the loop when the q key is pressed
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
-    cap.release()
-    cv2.destroyAllWindows()
 
+# Close everything
+cap.release()
+cv2.destroyAllWindows()
 
 
