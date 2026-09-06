@@ -23,3 +23,5 @@ while True:
     result = cv2.bitwise_and(frame, frame, mask = mask)
 
     contours,_ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    
