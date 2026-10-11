@@ -1,4 +1,3 @@
-
 import cv2, mediapipe as mp, numpy as np, time
 
 hands = mp.solutions.hands.Hands(max_num_hands=1)
