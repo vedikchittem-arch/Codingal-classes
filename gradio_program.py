@@ -28,5 +28,8 @@ PUNCTUATION = ".,!?:;'/()"
 
 # clean the word
 
-     
+def clean_word(word):
+    return word.lower().strip(PUNCTUATION)
+
+
            
